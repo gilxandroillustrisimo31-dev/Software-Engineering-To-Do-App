@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List Application</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="app-page">
+  <div id="app">
+    <div class="container app-container">
+      <div class="header-section">
+        <h3 class="app-title">My To-Do List</h3>
+        <div class="header-right">
+          <span id="username-display" class="username-display"></span>
+          <button class="btn btn-logout" onclick="logout()">Logout</button>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <!-- Left Column: Add Task Form -->
+        <div class="left-panel">
+          <div class="form-section">
+            <h2>Add Task</h2>
+            <form id="add-task-form">
+          <div class="form-group">
+            <label for="task-title">Title: </label>
+            <input
+              type="text"
+              id="task-title"
+              placeholder="Enter task title"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="task-description">Description: </label>
+            <textarea
+              id="task-description"
+              placeholder="Enter task description (optional)"
+              rows="3"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="task-due-date">Due Date:</label>
+            <input
+              type="date"
+              id="task-due-date"
+            />
+          </div>
+
+              <button type="submit" class="btn btn-primary">Add Task</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right Column: Task List -->
+        <div class="right-panel">
+          <!-- Error Message Display -->
+          <div id="error-message" class="error-message" style="display: none;"></div>
+
+          <!-- Task List -->
+          <div class="task-section">
+            <h2>Your Tasks</h2>
+            <div id="task-list" class="task-list">
+              <p class="loading">Loading tasks...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script defer src="assets/js/utils.js"></script>
+  <script defer src="assets/js/api.js"></script>
+  <script defer src="assets/js/main.js"></script>
+</body>
+</html>
